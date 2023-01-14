@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <Title>Login Form</Title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="styleLaunchScreen.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    </head>
+    <body>
+        <!-- <img src = "casino1.jpeg" width="100%" height="100%" style="z-index: -1;"> -->
+        <script>
+            function validateForm() {
+                if (validateAddress() && validateUsername()) {
+                    window.location.href = '../RouletteScreen/roulette.html';
+                    return true;
+                }
+                return false;
+            }
+
+            function validateUsername(){
+                var username = document.getElementById('username').value;
+                if( username == "" ) {
+                    alert("Login failed, Please enter your username");
+                    return false;
+                }
+                return true;
+            }
+
+            function validateAddress() {
+                var password = document.getElementById('address').value;
+                if(password == "") {
+                    alert("Login failed, Please enter your address");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+        <div class="form">
+            <h2>Login</h2>
+            <div class="input">
+                <div class="inputBox" >
+                    <label for="username">Username</label>
+                    <input type="text" id="username">
+                </div>
+                <div class="inputBox">
+                    <label for="address">MetaMask Wallet Address</label>
+                    <input type="password" id="address">
+                </div>
+                <div class="inputBox">
+                    <input type="submit" onclick = "validateForm()" name="" value="Start Betting"> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
